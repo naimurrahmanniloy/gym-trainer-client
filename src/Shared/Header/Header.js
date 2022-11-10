@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.webp'
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { FaUserAlt } from 'react-icons/fa';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const logginOut = () => {
+        logOut()
+            .then()
+            .catch(err => console.log(err))
+    }
     return (
         <div className="navbar bg-base-100 mb-5 p-5 text-black">
             <div className="navbar-start">
@@ -29,14 +38,19 @@ const Header = () => {
             <div className="navbar-end">
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img src="https://placeimg.com/80/80/people" />
+                        <div className="rounded-full">
+                            {
+                                user?.email ? <img src={user?.photoURL} /> : <FaUserAlt className='text-2xl'></FaUserAlt>
+                            }
                         </div>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
 
-                        <p className='text-center'>Naimur Rahman Niloy</p>
-                        <button className='btn btn-ghost mt-3'>Logout</button>
+                        <p className='text-center'>{user?.displayName}</p>
+
+                        {
+                            user?.email ? <button onClick={logginOut} className='btn btn-ghost mt-3'>Logout</button> : <Link className='btn btn-ghost mt-3' to='/login'>Login</Link>
+                        }
                     </ul>
                 </div>
             </div>

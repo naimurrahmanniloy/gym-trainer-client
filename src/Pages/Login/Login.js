@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import img from '../../assets/login.jpg'
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
@@ -6,7 +6,8 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
 
-    const { login } = useContext(AuthContext);
+    const { login, googleSignIn } = useContext(AuthContext);
+    const [loginUser, setLoginUser] = useState([])
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -16,9 +17,18 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
+                setLoginUser(user)
             })
             .then(err => console.log(err))
+    }
+
+    const googleLoginIn = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user;
+                setLoginUser(user)
+            })
+            .catch(err => console.log(err))
     }
 
     return (
@@ -50,7 +60,7 @@ const Login = () => {
                         </div>
                         <p className='text-center text-lg'>Or sign in with</p>
                         <div className="form-control mt-6">
-                            <button className=' btn btn-primary'>Google <FcGoogle className='ml-3 text-2xl'></FcGoogle></button>
+                            <button onClick={googleLoginIn} className=' btn btn-primary'>Google <FcGoogle className='ml-3 text-2xl'></FcGoogle></button>
 
                         </div>
                     </form>
