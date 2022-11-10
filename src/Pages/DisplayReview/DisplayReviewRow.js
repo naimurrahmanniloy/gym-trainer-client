@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { FaUsers } from 'react-icons/fa';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+
 
 const DisplayReviewRow = ({ view, handleDelete }) => {
 
-    const { _id, reviewerName, email, message, img } = view;
-
+    const { _id, reviewerName, email, message, img, status } = view;
+    const { user } = useContext(AuthContext)
 
 
     return (
@@ -17,7 +20,10 @@ const DisplayReviewRow = ({ view, handleDelete }) => {
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
-                            <img src={img} />
+                            {
+                                user?.photoURL ? <img src={img} /> :
+                                    <FaUsers className='text-2xl mt-3'></FaUsers>
+                            }
                         </div>
                     </div>
                     <div>
@@ -30,9 +36,9 @@ const DisplayReviewRow = ({ view, handleDelete }) => {
                 {message}
 
             </td>
-            <td>Purple</td>
+            <td>{email}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <button className="btn btn-ghost btn-xs">{status ? status : 'PENDING'}</button>
             </th>
         </tr>
 

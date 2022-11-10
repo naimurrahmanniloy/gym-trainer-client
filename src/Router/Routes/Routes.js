@@ -1,5 +1,6 @@
 import Main from "../../Layout/Main";
 import Allservices from "../../Pages/Allservices/Allservices";
+import Checkout from "../../Pages/Checkout/Checkout";
 import DisplayReview from "../../Pages/DisplayReview/DisplayReview";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path: '/allservices',
                 element: <Allservices></Allservices>
+            },
+            {
+                path: '/checkout',
+                element: <Checkout></Checkout>
             }
         ]
     }

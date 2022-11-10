@@ -39,8 +39,6 @@ const DisplayReview = () => {
 
     return (
         <div>
-            <h2 className="text-5xl">You have {reviewer.length}</h2>
-
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
 
@@ -53,7 +51,7 @@ const DisplayReview = () => {
                             </th>
                             <th>Name</th>
                             <th>Message</th>
-                            <th>Favorite Color</th>
+                            <th>Email</th>
                             <th></th>
                         </tr>
                     </thead>

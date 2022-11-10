@@ -29,6 +29,14 @@ const Header = () => {
                                 :
                                 <Link to='/login' className='m-4 text-xl'>Login</Link>
                         }
+                        {
+                            user?.email ?
+                                <>
+                                    <Link to='/checkout' className='m-4 text-xl'>CheckOut</Link>
+                                </>
+                                :
+                                <></>
+                        }
                     </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">
@@ -46,6 +54,14 @@ const Header = () => {
                             </>
                             :
                             <Link to='/login' className='m-4 text-xl'>Login</Link>
+                    }
+                    {
+                        user?.email ?
+                            <>
+                                <Link to='/checkout' className='m-4 text-xl'>CheckOut</Link>
+                            </>
+                            :
+                            <></>
                     }
                 </ul>
             </div>
