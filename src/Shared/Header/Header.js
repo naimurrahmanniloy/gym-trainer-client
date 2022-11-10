@@ -21,7 +21,14 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <Link to='/' className='m-4 text-xl' >Home</Link>
-                        <Link to='/login' className='m-4 text-xl'>Login</Link>
+                        {
+                            user?.email ?
+                                <>
+                                    <Link to='/myreview' className='m-4 text-xl'>My Review</Link>
+                                </>
+                                :
+                                <Link to='/login' className='m-4 text-xl'>Login</Link>
+                        }
                     </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">
@@ -32,7 +39,14 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     <Link to='/' className='m-4 text-xl'>Home</Link>
-                    <Link to='/login' className='m-4 text-xl'>Login</Link>
+                    {
+                        user?.email ?
+                            <>
+                                <Link to='/myreview' className='m-4 text-xl'>My Review</Link>
+                            </>
+                            :
+                            <Link to='/login' className='m-4 text-xl'>Login</Link>
+                    }
                 </ul>
             </div>
             <div className="navbar-end">
@@ -40,7 +54,7 @@ const Header = () => {
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="rounded-full">
                             {
-                                user?.email ? <img src={user?.photoURL} /> : <FaUserAlt className='text-2xl'></FaUserAlt>
+                                user?.email ? <img src={user?.photoURL ? user?.photoURL : <FaUserAlt className='text-2xl'></FaUserAlt>} /> : <FaUserAlt className='text-2xl'></FaUserAlt>
                             }
                         </div>
                     </label>

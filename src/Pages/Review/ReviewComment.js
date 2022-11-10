@@ -45,7 +45,9 @@ const ReviewComment = () => {
                 </div>
                 <textarea className="textarea textarea-error w-full mt-5 p-10" name='message' placeholder="Your valuable Comment" required></textarea>
 
-                <input className='btn btn-primary mx-auto' type="submit" value="Place Your Review" />
+                <div className='text-center p-10'>
+                    <input className='btn btn-primary mx-auto' type="submit" value="Place Your Review" />
+                </div>
             </form>
         </div>
     );
