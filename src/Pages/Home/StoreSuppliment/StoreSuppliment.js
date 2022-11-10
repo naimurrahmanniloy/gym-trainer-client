@@ -4,7 +4,7 @@ import img from '../../../assets/supli.jpg'
 
 const StoreSuppliment = () => {
     return (
-        <div>
+        <div data-aos="fade-down-left">
             <div className="hero mb-10  bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className='w-2/3'>

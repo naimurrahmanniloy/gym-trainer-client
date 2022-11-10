@@ -17,7 +17,7 @@ const Services = () => {
                 <h2 className="text-5xl font-semibold">Service Area</h2>
                 <p>Will provide the best service for you. This will make you Fit also. <br></br> Become a healthy person of all the time</p>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ml-4 mt-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ml-4 mt-10' data-aos="fade-down">
 
                 {
                     services.map(service => <ServiceCard service={service} key={service._id}></ServiceCard>)

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
-        <div className="bg-base-200">
+        <div data-aos="fade-right" className="bg-base-200">
             <h1 className='text-4xl text-center font-bold mt-10'>About </h1>
             <div className="hero p-10 bg-base-200">
 

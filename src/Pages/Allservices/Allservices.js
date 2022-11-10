@@ -14,7 +14,10 @@ const Allservices = () => {
     return (
         <div>
             <h1 className='text-3xl text-center'>All Services</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ml-4 mt-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ml-4 mt-10' data-aos="fade-left"
+                data-aos-anchor="#example-anchor"
+                data-aos-offset="500"
+                data-aos-duration="500">
 
                 {
                     services.map(service => <AllserviceCard service={service} key={service._id}></AllserviceCard>)
