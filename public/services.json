@@ -1,0 +1,38 @@
+[
+    {
+        "picture": "https://images.hindustantimes.com/img/2021/09/30/550x309/abdominal_fat_(1)_1632997411712_1632997414716.jpg",
+        "name": "Fat Loss Program",
+        "detail": "Fat is a common thing that we suffer a lot. For this reason we are here to make you a fat loss person. If you want to get this service i will provide a online routine for the fat loss program ",
+        "price": 5000
+    },
+    {
+        "picture": "https://hips.hearstapps.com/hmg-prod/images/gettyimages-492573824-1528828970.jpg?resize=1200:*",
+        "name": "Muscle gain Program",
+        "detail": "This is mainly for the people who are skiny. For this reason we are here to make you a muscular person. If you want to get this service i will provide a online routine for the muscle gain program ",
+        "price": 8000
+    },
+    {
+        "picture": "https://cdn-wordpress-info.futurelearn.com/wp-content/uploads/FL657-Blog_train-like-an-athlete.jpg",
+        "name": "Athlete Program",
+        "detail": "This is for the athelete persons who are wanting to boost up their energies and make a healthy life. If you want to get this service i will provide a online routine for the athlete program ",
+        "price": 3000
+    },
+    {
+        "picture": "https://s.hdnux.com/photos/01/20/64/12/21185210/4/1200x0.jpg",
+        "name": "Bodybuilding Program",
+        "detail": "Bodybuilding is a passion of all peoples. Those who are wanting to get a body shape that helps to compitite with others can avail this service i will provide a online routine for the bodybuilding program ",
+        "price": 10000
+    },
+    {
+        "picture": "https://www.mensjournal.com/wp-content/uploads/mf/_main_crossfit_2.jpg?w=1000&h=563&crop=1&quality=86&strip=all",
+        "name": "Boosting Strenth Program",
+        "detail": "This is for the persons who are wanting to boost up strenth for working. Boosting strenth will prevent the laziness. If you want to get this service i will provide a online routine for the boosting strenth program ",
+        "price": 2000
+    },
+    {
+        "picture": "https://breakingmuscle.com/wp-content/uploads/2014/12/62371489270165a07468z.jpg",
+        "name": "Powerlifting Program",
+        "detail": "The biggest compitition is powerlifting. This is a very intersting fo the powerlifters.  If you want to get this service i will provide a online routine for the powerlifting program ",
+        "price": 4000
+    }
+]
