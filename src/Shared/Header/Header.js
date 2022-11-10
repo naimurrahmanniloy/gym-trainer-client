@@ -37,6 +37,7 @@ const Header = () => {
                                 :
                                 <></>
                         }
+                        <Link to='/blogs' className='m-4 text-xl'>Blogs</Link>
                     </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">
@@ -63,6 +64,7 @@ const Header = () => {
                             :
                             <></>
                     }
+                    <Link to='/blogs' className='m-4 text-xl'>Blogs</Link>
                 </ul>
             </div>
             <div className="navbar-end">

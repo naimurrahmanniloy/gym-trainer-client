@@ -26,6 +26,30 @@ const DisplayReview = () => {
 
     }
 
+    const handleStatusUpdate = id => {
+        fetch(`http://localhost:5000/reviews/${id}`, {
+            method: 'PATCH',
+
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ status: 'APPROVED' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    const remaining = reviewer.filter(viewr => viewr._id !== id);
+                    const approving = reviewer.find(viewr => viewr._id === id)
+                    approving.status = "APPROVED"
+
+                    const newReviewrs = [approving, ...remaining];
+                    setReviewer(newReviewrs)
+                }
+            })
+
+    }
+
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?email=${user?.email}`)
             .then(res => res.json())
@@ -57,7 +81,8 @@ const DisplayReview = () => {
                     </thead>
                     <tbody>
                         {
-                            reviewer.map(view => <DisplayReviewRow handleDelete={handleDelete} key={view._id} view={view}></DisplayReviewRow>)
+                            reviewer.map(view => <DisplayReviewRow
+                                handleStatusUpdate={handleStatusUpdate} handleDelete={handleDelete} key={view._id} view={view}></DisplayReviewRow>)
                         }
                     </tbody>
 

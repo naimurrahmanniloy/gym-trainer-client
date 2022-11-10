@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import ReviewComment from './ReviewComment';
 
@@ -18,7 +18,7 @@ const Review = () => {
                     <p className='text-xl'>{detail}</p>
                     <p className='text-xl font-bold mt-4'>Price: ${price}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">CheckOut</button>
+                        <Link > <button className="btn btn-primary">CheckOut</button></Link>
                     </div>
                 </div>
             </div>

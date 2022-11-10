@@ -3,7 +3,7 @@ import { FaUsers } from 'react-icons/fa';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 
-const DisplayReviewRow = ({ view, handleDelete }) => {
+const DisplayReviewRow = ({ view, handleDelete, handleStatusUpdate }) => {
 
     const { _id, reviewerName, email, message, img, status } = view;
     const { user } = useContext(AuthContext)
@@ -38,7 +38,9 @@ const DisplayReviewRow = ({ view, handleDelete }) => {
             </td>
             <td>{email}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">{status ? status : 'PENDING'}</button>
+                <button
+                    onClick={() => handleStatusUpdate(_id)}
+                    className="btn btn-ghost btn-xs">{status ? status : 'PENDING'}</button>
             </th>
         </tr>
 

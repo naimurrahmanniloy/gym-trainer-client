@@ -1,11 +1,13 @@
 import Main from "../../Layout/Main";
 import Allservices from "../../Pages/Allservices/Allservices";
-import Checkout from "../../Pages/Checkout/Checkout";
+import Blogs from "../../Pages/Blogs/Blogs";
+import CheckOut from "../../Pages/CheckOut/CheckOut";
 import DisplayReview from "../../Pages/DisplayReview/DisplayReview";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Review from "../../Pages/Review/Review";
 import SignUp from "../../Pages/SignUp/SignUp";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myreview',
-                element: <DisplayReview></DisplayReview>
+                element: <PrivateRoute><DisplayReview></DisplayReview></PrivateRoute>
             },
             {
                 path: '/allservices',
@@ -41,7 +43,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/checkout',
-                element: <Checkout></Checkout>
+                element: <CheckOut></CheckOut>
+            },
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
             }
         ]
     }
